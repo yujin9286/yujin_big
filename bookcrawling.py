@@ -6,7 +6,8 @@ book_title=[]
 book_rating=[]
 book_price=[]
 
-for page_end in range(1, 1500):
+
+for page_end in range(1, 4246):
     url = 'https://series.naver.com/ebook/categoryProductList.nhn?categoryTypeCode=all&page=' + str(page_end)
     page=urlopen(url)
     soup=BeautifulSoup(page,"html.parser")
@@ -16,4 +17,5 @@ for page_end in range(1, 1500):
 
 
 data=pd.DataFrame({'title':book_title,'rating':book_rating,'price':book_price})
-data.to_csv("bookcrawling.csv")
+data
+data.to_csv("all_total_bookcrawling.csv")
